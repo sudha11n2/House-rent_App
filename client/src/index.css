@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+
+  /* HouseHunt Design Tokens */
+  --color-hh-dark: #1a2b22;
+  --color-hh-dark-mid: #243322;
+  --color-hh-cream: #f0ebe2;
+  --color-hh-cream-light: #f7f3ec;
+  --color-hh-cream-bg: #ede8df;
+  --color-hh-rust: #8B3A2E;
+  --color-hh-rust-hover: #6e2d23;
+  --color-hh-rust-light: #c0503f;
+  --color-hh-text: #1c1a17;
+  --color-hh-text-muted: #6b6558;
+  --color-hh-border: #d5cfc6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-hh-cream-light);
+  color: var(--color-hh-text);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+/* ── Navbar ────────────────────────────────────────── */
+.hh-navbar {
+  background-color: var(--color-hh-cream-light);
+  border-bottom: 1px solid var(--color-hh-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* ── Hero ──────────────────────────────────────────── */
+.hh-hero {
+  background-color: var(--color-hh-dark);
+  color: var(--color-hh-cream-light);
+}
+
+/* ── Label style ───────────────────────────────────── */
+.hh-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-hh-rust-light);
+}
+
+/* ── Inputs ────────────────────────────────────────── */
+.hh-input {
+  background-color: var(--color-hh-cream-light);
+  border: 1px solid var(--color-hh-border);
+  color: var(--color-hh-text);
+  font-family: var(--font-sans);
+  padding: 0.625rem 0.875rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-size: 0.925rem;
+}
+
+.hh-input:focus {
+  border-color: var(--color-hh-rust);
+}
+
+.hh-input::placeholder {
+  color: var(--color-hh-text-muted);
+  opacity: 0.7;
+}
+
+/* ── Buttons ───────────────────────────────────────── */
+.btn-rust {
+  background-color: var(--color-hh-rust);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-rust:hover {
+  background-color: var(--color-hh-rust-hover);
+}
+
+.btn-rust:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border: 1px solid var(--color-hh-text);
+  color: var(--color-hh-text);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-hh-text);
+  color: var(--color-hh-cream-light);
+}
+
+/* ── Property Card ─────────────────────────────────── */
+.hh-card {
+  background-color: var(--color-hh-cream-light);
+  border: 1px solid var(--color-hh-border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hh-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(26, 43, 34, 0.1);
+}
+
+/* ── Search bar in hero ────────────────────────────── */
+.hh-search-bar {
+  background-color: var(--color-hh-cream-light);
+  border: 1px solid rgba(240, 235, 226, 0.25);
+  border-left: 3px solid var(--color-hh-rust);
+}
+
+/* ── Form card (login/register) ────────────────────── */
+.hh-form-card {
+  background-color: var(--color-hh-cream-light);
+  border: 1px solid var(--color-hh-border);
+  /* bracket corners */
+  position: relative;
+}
+
+.hh-form-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid var(--color-hh-rust);
+  border-left: 2px solid var(--color-hh-rust);
+}
+
+.hh-form-card::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid var(--color-hh-rust);
+  border-right: 2px solid var(--color-hh-rust);
+}
+
+/* ── Footer ────────────────────────────────────────── */
+.hh-footer {
+  background-color: var(--color-hh-dark);
+  color: rgba(240, 235, 226, 0.7);
+}
+
+/* ── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-hh-cream-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-hh-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-hh-text-muted); }
