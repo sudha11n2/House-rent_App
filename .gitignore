@@ -42,7 +42,6 @@ logs
 *.sln
 *.sw?
 *.iml
-.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -52,7 +51,6 @@ logs
 
 # OS files
 Thumbs.db
-.DS_Store
 
 # Cache files
 .eslintcache
