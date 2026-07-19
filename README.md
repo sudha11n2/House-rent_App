@@ -4,6 +4,8 @@ A modern house rental application built with **React** and **Vite** for fast, re
 
 **Live Demo:** [house-rent-app-alpha.vercel.app](https://house-rent-app-alpha.vercel.app/)
 
+**Demo Video:** [Watch on Google Drive](https://drive.google.com/file/d/1kWG_wfbw95s2ua2Z1nUjiv42sQC9G0eO/view?usp=sharing)
+
 ## Features
 
 - Browse property listings
