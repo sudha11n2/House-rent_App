@@ -24,21 +24,26 @@ A modern house rental application built with **React** and **Vite** for fast, re
 ## Project Structure
 
 ```
-House-rent_App/
-├── house-rent-app/
-│   └── client/                    React + Vite frontend
-│       ├── src/
-│       │   ├── components/        Reusable React components
-│       │   ├── pages/             Page components
-│       │   ├── App.jsx            Main app component
-│       │   ├── main.jsx           Entry point
-│       │   └── index.css          Global styles
-│       ├── public/                Static assets
-│       ├── package.json
-│       ├── vite.config.js         Vite configuration
-│       └── .env.example
-├── README.md
-└── package.json
+househunt/
+├── backend/              Express API
+│   ├── config/db.js       MongoDB connection
+│   ├── models/            User, Property, Inquiry (Mongoose schemas)
+│   ├── middleware/auth.js JWT verification + role guard
+│   ├── controllers/       Route handlers
+│   ├── routes/            Express routers
+│   ├── server.js          App entry point
+│   └── .env.example
+└── frontend/              React + Vite SPA
+    ├── src/
+    │   ├── api/axios.js       Axios instance with auth interceptor
+    │   ├── context/AuthContext.jsx
+    │   ├── components/        Navbar, Footer, PropertyCard, ProtectedRoute, Loader
+    │   ├── pages/              Home, Listings, PropertyDetail, Login, Register,
+    │   │                       Dashboard, AddProperty, About, Contact, NotFound
+    │   ├── index.css          Design tokens & global styles
+    │   ├── App.jsx            Routes
+    │   └── main.jsx           Entry point
+    └── .env.example
 ```
 
 ## Prerequisites
@@ -58,7 +63,7 @@ cd House-rent_App
 ### 2. Install dependencies
 
 ```bash
-cd house-rent-app/client
+cd househunt/frontend
 npm install
 # or
 yarn install
@@ -107,7 +112,7 @@ If connecting to a backend API, configure the API endpoint in your `.env` file:
 ```env
 VITE_API_URL=http://localhost:5000
 # or for production
-VITE_API_URL=https://api.yourdomina.com
+VITE_API_URL=https://api.yourdomain.com
 ```
 
 Access it in your code:
