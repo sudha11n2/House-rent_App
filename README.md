@@ -2,7 +2,7 @@
 
 A modern house rental application built with **React** and **Vite** for fast, responsive browsing of rental properties.
 
-**Live Demo:** [house-rent-app-nine.vercel.app](https://house-rent-app-nine.vercel.app)
+**Live Demo:** [house-rent-app-alpha.vercel.app](https://house-rent-app-alpha.vercel.app/)
 
 ## Features
 
