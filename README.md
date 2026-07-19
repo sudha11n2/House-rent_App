@@ -25,7 +25,7 @@ A modern house rental application built with **React** and **Vite** for fast, re
 
 ```
 househunt/
-├── backend/              Express API
+├── server/              Express API
 │   ├── config/db.js       MongoDB connection
 │   ├── models/            User, Property, Inquiry (Mongoose schemas)
 │   ├── middleware/auth.js JWT verification + role guard
@@ -33,7 +33,7 @@ househunt/
 │   ├── routes/            Express routers
 │   ├── server.js          App entry point
 │   └── .env.example
-└── frontend/              React + Vite SPA
+└── client/              React + Vite SPA
     ├── src/
     │   ├── api/axios.js       Axios instance with auth interceptor
     │   ├── context/AuthContext.jsx
@@ -63,7 +63,7 @@ cd House-rent_App
 ### 2. Install dependencies
 
 ```bash
-cd househunt/frontend
+cd househunt/client
 npm install
 # or
 yarn install
